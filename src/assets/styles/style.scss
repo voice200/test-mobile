@@ -1,5 +1,6 @@
 @import "valiables";
 @import "bem/b-fon";
+@import "bem/profile";
 
 body{
   background: linear-gradient(360deg, #020266 0%, #0B00E5 100%);
@@ -38,11 +39,4 @@ body{
   line-height: 22px;
   letter-spacing: 0.15px;
   color: #FFFFFF;
-}
-.b-avatar{
-  display: flex;
-
-  .b-avatar_title{
-
-  }
 }
