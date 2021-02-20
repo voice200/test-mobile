@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/pages/home'
 import DummyPage from '@/pages/dummy'
-import AddNewCart from '@/pages/add-new-cart'
+import AddNewCard from '@/pages/add-new-card'
 import Payment from '@/pages/payment'
 import PersonalProfile from '@/pages/personal-profile'
 
@@ -20,13 +20,13 @@ const routes = [
 		component: DummyPage
 	},
 	{
-		path: '/addCart',
-		name: 'addCart',
-		component: AddNewCart
+		path: '/addCard',
+		name: 'addCard',
+		component: AddNewCard
 	},
 	{
-		path: '/payment',
-		name: 'payment',
+		path: '/payments',
+		name: 'payments',
 		component: Payment
 	},
 	{
