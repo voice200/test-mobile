@@ -1,16 +1,20 @@
 <template>
-  <button class="b-button">
+  <button class="b-button" :class="{btn_disable: disable}" :disabled="disable">
       {{ label }}
   </button>
 </template>
 
 <script>
 export default {
-  props:['labelBtn'],
+  props:['labelBtn', 'disabled'],
   data () {
     return{
-      label: this.labelBtn
+      label: this.labelBtn,
+      disable: this.disabled
     }
+  },
+  updated() {
+    this.disable = this.disabled
   }
 
 }
@@ -30,6 +34,10 @@ export default {
   letter-spacing: -0.24px;
   color: #020266;
   outline: none;
+}
+.btn_disable{
+  color: rgba(2, 2, 102, .5);
+  background: rgba(255, 255, 255, .7);
 }
 
 </style>

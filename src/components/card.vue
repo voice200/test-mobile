@@ -22,14 +22,40 @@
 </template>
 
 <script>
+const defaultValue = {
+  nameCard: 'Название Карты',
+  numberCard: '**** **** **** ****',
+  active: '**/**',
+  paymentsSystem: 'mastercard'
+}
 export default {
   props: ['color', 'cardData'],
   name: "card",
   data() {
   return{
     background: this.color,
-    card: this.cardData
+    card: {
+      nameCard: this.cardData.nameCard ? this.cardData.nameCard : defaultValue.nameCard,
+      numberCard: this.cardData.numberCard ? this.cardData.numberCard : defaultValue.numberCard,
+      active: this.cardData.active ? this.cardData.active : defaultValue.active,
+      paymentsSystem: 'mastercard'
+    }
   }
+  },
+  methods:{
+
+  },
+  created() {
+    console.log('card', this.card, this.cardData, this.defaultValue)
+
+  },
+  beforeUpdate() {
+    this.card= {
+      nameCard: this.cardData.nameCard ? this.cardData.nameCard : defaultValue.nameCard,
+      numberCard: this.cardData.numberCard ? this.cardData.numberCard : defaultValue.numberCard,
+      active: this.cardData.active ? this.cardData.active : defaultValue.active,
+      paymentsSystem: 'mastercard'
+    }
   }
 }
 </script>
