@@ -1,23 +1,24 @@
 <template>
   <v-container class="b-payment">
-    <div >
       <div class="b-payment_cards">
-        <card :cardData="cardData"/>
+          <card :cardData="cardData"/>
       </div>
       <div class="b-payment_button">
-        <app-button :label-btn="label"/>
+        <app-button
+            :label-btn="label"
+            :onClick="goToPage"/>
       </div>
-
-    </div>
   </v-container>
 </template>
 
 <script>
 import Card from '@/components/card';
 import AppButton from '@/components/app-button';
+
+
 export default {
 name: "payment",
-  components: { AppButton, Card },
+  components: { AppButton, Card},
   data() {
     return {
       cardData:{
@@ -26,7 +27,18 @@ name: "payment",
           active: '04/24',
           paymentsSystem: 'mastercard'
       },
-      label: 'Добавить новую карту'
+      label: 'Добавить новую карту',
+      ops: {
+        vuescroll: {},
+        scrollPanel: {},
+        rail: {},
+        bar: {}
+      }
+    }
+  },
+  methods:{
+    goToPage(){
+      this.$router.push('/addCard')
     }
   }
 }
@@ -35,13 +47,16 @@ name: "payment",
 <style lang="scss" scoped>
 .b-payment{
   width: 100%;
-  min-height: 400px;
+  height: 100vh;
   background: linear-gradient(360deg, #020266 0%, #0B00E5 100%);
-  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 30px;
 
   &_cards{
     width: 100%;
-    min-height: 300px;
+    max-height: 400px;
     margin-bottom: 55px;
     display: flex;
     justify-content: center;
@@ -49,7 +64,6 @@ name: "payment",
   &_button{
     display: flex;
     justify-content: center;
-    margin-bottom: 40px;
   }
 }
 </style>

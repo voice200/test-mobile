@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="b-container">
       <v-card
           class="b-avatar_container b-avatar"
       >
-        <div class="b-avatar_cross">
+        <div class="b-avatar_cross" @click="goToHome">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="white" fill-opacity="0.87"/>
           </svg>
@@ -40,7 +40,7 @@
       />
     <div class="b-profile_header">
       <v-container>
-        <button class="b-profile">
+        <button class="b-profile" @click="goToHome">
           <div class="b-profile_menu-item ">
             <div class="b-profile_icon"
                  v-html="exitButton.icon">
@@ -77,6 +77,11 @@ export default {
       },
       exitButton: exit
     }
+  },
+  methods:{
+    goToHome(){
+      this.$router.push('/')
+    }
   }
 }
 </script>
@@ -112,6 +117,7 @@ export default {
   }
   .b-avatar_cross{
     margin-left: 31px;
+    cursor: pointer;
   }
   .b-profile {
     padding: 16px 16px;
@@ -207,7 +213,9 @@ export default {
   font-size: 14px;
   line-height: 22px;
   letter-spacing: 0.15px;
-
+}
+.b-container{
+  height: 100vh;
 }
 
 </style>

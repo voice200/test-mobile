@@ -1,12 +1,15 @@
 <template>
-  <button class="b-button" :class="{btn_disable: disable}" :disabled="disable">
+  <button class="b-button"
+          :class="{btn_disable: disable}"
+          :disabled="disable"
+          @click="onClick">
       {{ label }}
   </button>
 </template>
 
 <script>
 export default {
-  props:['labelBtn', 'disabled'],
+  props:['labelBtn', 'disabled', 'onClick'],
   data () {
     return{
       label: this.labelBtn,

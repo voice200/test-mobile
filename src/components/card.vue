@@ -1,5 +1,5 @@
 <template>
-  <div class="b-card">
+  <div class="b-card" >
     <div class="b-card_name">
       <span class="b-card_label">CB | </span> <span class="b-card_name-bank">{{ card.nameCard }}</span>
     </div>
@@ -42,21 +42,7 @@ export default {
     }
   }
   },
-  methods:{
 
-  },
-  created() {
-    console.log('card', this.card, this.cardData, this.defaultValue)
-
-  },
-  beforeUpdate() {
-    this.card= {
-      nameCard: this.cardData.nameCard ? this.cardData.nameCard : defaultValue.nameCard,
-      numberCard: this.cardData.numberCard ? this.cardData.numberCard : defaultValue.numberCard,
-      active: this.cardData.active ? this.cardData.active : defaultValue.active,
-      paymentsSystem: 'mastercard'
-    }
-  }
 }
 </script>
 

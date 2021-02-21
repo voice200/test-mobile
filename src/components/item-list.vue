@@ -6,8 +6,10 @@
         <v-list-item
             v-for="(item, i) in items"
             :key="i"
+            @click="goToPage(item.link)"
         >
-          <v-list-item-icon v-html="item.icon">
+          <v-list-item-icon>
+            <img :src="getImg(item.icon)">
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title
@@ -28,12 +30,25 @@
 </template>
 
 <script>
+
 export default {
   props: ['items'],
   name: 'item-list',
   data () {
     return {
-      model: 1
+      model: 1,
+    }
+  },
+  methods:{
+    goToPage(link){
+      this.$router.push(link)
+    }
+  },
+  computed:{
+    getImg(){
+      return name =>{
+        return  require(`@/assets/images/${name}`);
+      }
     }
   }
 }
