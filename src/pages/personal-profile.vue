@@ -30,31 +30,23 @@
         </v-card-subtitle>
       </div>
       <div class="b-profile_border"></div>
-      <button class="b-profile">
-        <div class="b-profile_menu-item">
-          <div class="b-profile_icon" v-html="profile.icon"></div>
-          <div
-            class="b-profile_title b-menu_title"
-            style="color: #ffffff; font-family: Montserrat, sans-serif"
-          >
-            {{ profile.title }}
-          </div>
-        </div>
-        <div class="b-profile_arrow" v-html="profile.arrow"></div>
-      </button>
+      <item-menu :item="profile" />
     </v-card>
     <item-list :items="items" />
-
+    <div class="b-profile_exit">
+      <item-menu :item="exitButton" />
+    </div>
   </div>
 </template>
 
 <script>
 import ItemList from "@/components/item-list";
 import { menuItems, profileItems, exit } from "@/fixtures";
+import ItemMenu from "@/components/item-menu";
 
 export default {
   name: "personal-profile",
-  components: { ItemList },
+  components: { ItemMenu, ItemList },
   comments: {
     ItemList,
   },
@@ -105,7 +97,7 @@ export default {
       margin-top: 20px;
       padding: 0;
     }
-    &__position-number{
+    &__position-number {
       margin-top: 5px;
       padding: 0;
       margin-bottom: 30.5px;
@@ -133,6 +125,9 @@ export default {
     justify-content: space-between;
     align-items: center;
     outline: none;
+    &_exit {
+      margin-top: 40px;
+    }
 
     .b-profile_menu-item {
       width: 100%;
@@ -152,11 +147,13 @@ export default {
     }
   }
 }
+.b-profile_exit {
+  margin-top: 40px;
+}
 .b-profile_header {
   min-height: 197px;
   background: linear-gradient(360deg, #020266 0%, #0b00e5 100%);
-  border-radius: 0px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 100%;
   font-family: Montserrat, sans-serif;
   font-style: normal;
@@ -165,23 +162,6 @@ export default {
   line-height: 22px;
   letter-spacing: 0.15px;
   padding-left: 5px;
-
-  .b-profile_menu-item {
-    width: 100%;
-    align-items: center;
-    display: flex;
-    margin-top: 43px;
-  }
-  .b-profile_arrow {
-    margin-right: 15px;
-  }
-  .b-profile_icon {
-    margin-right: 30px;
-  }
-  .b-profile {
-    width: 100%;
-    outline: none;
-  }
 }
 
 .b-profile_border {
@@ -190,12 +170,10 @@ export default {
   border-top: 1px solid rgba(52, 142, 255, 0.5);
   margin-left: 20px;
   margin-right: 20px;
-  //width: 94%;
 }
 .theme--light {
   background: linear-gradient(360deg, #020266 0%, #0b00e5 100%);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 100%;
   font-family: Montserrat, sans-serif;
   font-style: normal;

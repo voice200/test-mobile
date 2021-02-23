@@ -1,22 +1,26 @@
 <template>
-  <button class="b-menu">
+  <button class="b-menu" @click="goToPage(item.link)">
     <div class="b-menu_item">
-      <div class="b-profile_icon" v-html="item.icon"></div>
+      <div class="b-profile_icon">
+        <img :src="getImg(item.icon)" alt="icon" />
+      </div>
       <div
-          class="b-menu_title"
-          style="color: #ffffff; font-family: Montserrat, sans-serif"
+        class="b-menu_title"
+        style="color: #ffffff; font-family: Montserrat, sans-serif"
       >
         {{ item.title }}
       </div>
     </div>
-    <div class="b-profile_arrow" v-html="item.arrow"></div>
+    <div class="b-profile_arrow" v-if="item.arrow">
+      <img :src="getImg(item.arrow)" alt="arrow" />
+    </div>
   </button>
 </template>
 
 <script>
 export default {
-  name: 'item-menu',
-  props:['item'],
+  name: "item-menu",
+  props: ["item"],
   computed: {
     getImg() {
       return (name) => {
@@ -24,7 +28,12 @@ export default {
       };
     },
   },
-}
+  methods: {
+    goToPage(link) {
+      this.$router.push(link);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -50,7 +59,7 @@ export default {
     letter-spacing: 0.15px;
   }
   .b-profile_icon {
-    margin-right: 30px;
+    margin-right: 10.23px;
   }
 }
 </style>
