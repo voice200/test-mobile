@@ -1,57 +1,56 @@
 const arrow = `<svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M7.7997 6.28941L2.17617 0.66599C2.0461 0.535822 1.87248 0.464111 1.68735 0.464111C1.50221 0.464111 1.32859 0.535822 1.19852 0.66599L0.784389 1.08002C0.514909 1.34981 0.514909 1.78829 0.784389 2.05767L5.5066 6.77988L0.779149 11.5073C0.649084 11.6375 0.577271 11.811 0.577271 11.9961C0.577271 12.1813 0.649084 12.3548 0.779149 12.4851L1.19328 12.899C1.32345 13.0292 1.49697 13.1009 1.68211 13.1009C1.86724 13.1009 2.04086 13.0292 2.17093 12.899L7.7997 7.27045C7.93007 7.13987 8.00168 6.96553 8.00127 6.78019C8.00168 6.59413 7.93007 6.41989 7.7997 6.28941Z" fill="white"/>
 </svg>
-`
+`;
 
 export const menuItems = [
-	{
-		title: 'Услуги',
-		icon: `star.svg`,
-		arrow: arrow,
-		divider: true,
-		link: '/otherPages'
-	},
-	{
-		title: 'Документы',
-		icon: `folder_1.svg`,
-		arrow: arrow,
-		divider: true,
-		link: '/otherPages'
-	},
-	{
-		title: 'Оплата',
-		icon: 'payment.svg',
-		arrow: arrow,
-		divider: true,
-		link: '/payments'
-	},
-	{
-		title: 'Сообщения',
-		icon: `inbox_1.svg`,
-		arrow: arrow,
-		divider: true,
-		link: '/otherPages'
-	},
-	{
-		title: 'Уведомления',
-		icon: `tasks.svg`,
-		arrow: arrow,
-		divider: true,
-		link: '/otherPages'
-	},
-	{
-		title: 'Настройки',
-		icon: `settings.svg`,
-		arrow: arrow,
-		divider: true,
-		link: '/otherPages'
-	}
+  {
+    title: "Услуги",
+    icon: `star.svg`,
+    arrow: arrow,
+    divider: true,
+    link: "/otherPages",
+  },
+  {
+    title: "Документы",
+    icon: `folder_1.svg`,
+    arrow: arrow,
+    divider: true,
+    link: "/otherPages",
+  },
+  {
+    title: "Оплата",
+    icon: "payment.svg",
+    arrow: arrow,
+    divider: true,
+    link: "/payments",
+  },
+  {
+    title: "Сообщения",
+    icon: `inbox_1.svg`,
+    arrow: arrow,
+    divider: true,
+    link: "/otherPages",
+  },
+  {
+    title: "Уведомления",
+    icon: `tasks.svg`,
+    arrow: arrow,
+    divider: true,
+    link: "/otherPages",
+  },
+  {
+    title: "Настройки",
+    icon: `settings.svg`,
+    arrow: arrow,
+    divider: true,
+    link: "/otherPages",
+  },
 ];
 
-export const profileItems =
-	{
-		title: 'Персональная информация',
-		icon:`<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const profileItems = {
+  title: "Персональная информация",
+  icon: `<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0)">
 <path d="M30 6.92754V23.0725C30 26.8986 26.8986 30 23.0725 30H6.92754C3.10137 30 0 26.8986 0 23.0725V6.92754C0 3.10137 3.10137 0 6.92754 0H23.0725C26.8986 0 30 3.10137 30 6.92754Z" fill="url(#paint0_linear)"/>
 <path d="M6.92754 29.7656C3.23689 29.7656 0.234375 26.7631 0.234375 23.0725V6.92754C0.234375 3.23689 3.23689 0.234375 6.92754 0.234375H23.0725C26.7631 0.234375 29.7656 3.23689 29.7656 6.92754V23.0725C29.7656 26.7631 26.7631 29.7656 23.0725 29.7656H6.92754Z" fill="url(#paint1_linear)"/>
@@ -118,11 +117,12 @@ export const profileItems =
 </clipPath>
 </defs>
 </svg>`,
-		arrow: arrow, }
+  arrow: arrow,
+};
 
 export const exit = {
-	title: 'Выйти',
-	icon: `
+  title: "Выйти",
+  icon: `
 	<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0)">
 <path d="M30 6.92754V23.0725C30 26.8986 26.8986 30 23.0725 30H6.92754C3.10137 30 0 26.8986 0 23.0725V6.92754C0 3.10137 3.10137 0 6.92754 0H23.0725C26.8986 0 30 3.10137 30 6.92754Z" fill="url(#paint0_linear)"/>
@@ -171,5 +171,5 @@ export const exit = {
 </defs>
 </svg>
 
-`
-}
+`,
+};

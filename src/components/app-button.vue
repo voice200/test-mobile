@@ -1,33 +1,34 @@
 <template>
-  <button class="b-button"
-          :class="{btn_disable: disable}"
-          :disabled="disable"
-          @click="onClick">
-      {{ label }}
+  <button
+    class="b-button"
+    :class="{ btn_disable: disable }"
+    :disabled="disable"
+    @click="onClick"
+  >
+    {{ label }}
   </button>
 </template>
 
 <script>
 export default {
-  props:['labelBtn', 'disabled', 'onClick'],
-  data () {
-    return{
+  props: ["labelBtn", "disabled", "onClick"],
+  data() {
+    return {
       label: this.labelBtn,
-      disable: this.disabled
-    }
+      disable: this.disabled,
+    };
   },
   updated() {
-    this.disable = this.disabled
-  }
-
-}
+    this.disable = this.disabled;
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-.b-button{
+.b-button {
   width: 335px;
   height: 50px;
-  background: #FFFFFF;
+  background: #ffffff;
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -38,9 +39,8 @@ export default {
   color: #020266;
   outline: none;
 }
-.btn_disable{
-  color: rgba(2, 2, 102, .5);
-  background: rgba(255, 255, 255, .7);
+.btn_disable {
+  color: rgba(2, 2, 102, 0.5);
+  background: rgba(255, 255, 255, 0.7);
 }
-
 </style>
